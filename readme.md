@@ -66,3 +66,7 @@ HTML Way
 
 # Home Page
 HTML Way
+
+
+# * Check for authentication in factory - see angular notes readme
+Is is possible to check authorisation before returning any data from factory 

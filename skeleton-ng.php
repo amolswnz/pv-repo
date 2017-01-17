@@ -51,12 +51,12 @@
     </section>
     <?php require_once 'partials/includes/footer.html'; ?>
 </div>
-<script src="js/themejs/jquery.js"></script>
-<script src="js/themejs/plugins.js"></script>
-<script src="js/themejs/functions.js"></script>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/plugins.js"></script>
+<script src="js/functions.js"></script>
 
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
 
-<script src="js/app/MainApp.js"></script>
+<script src="app/MainApp.js"></script>
 </body>
 </html>
