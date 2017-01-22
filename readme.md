@@ -70,3 +70,7 @@ HTML Way
 
 # * Check for authentication in factory - see angular notes readme
 Is is possible to check authorisation before returning any data from factory 
+
+
+#Timepicker - one of the best searched
+file:///E:/wamp64/www/just-for-fun/bower_components/angular-material-datetimepicker/index.html

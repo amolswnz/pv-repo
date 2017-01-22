@@ -40,50 +40,67 @@
         </div>
     </section>
     <section id="content" data-animate="fadeInUp">
-    <div class="content-wrap" ng-controller="TransferCtrl as transfer">
+    <div class="content-wrap">
         <div class="container clearfix">
         <h4>Create Booking</h4>
-        <form name="transferForm" novalidate>
-            <md-input-container class=" col-md-6">
-                <label>Pickup location</label>
-                <input ng-model="transfer.pickUpLocation" name="pickUpLocation" required min="10">
-                <div ng-messages="transferForm.pickUpLocation.$error" multiple md-auto-hide="false">
-                    <div ng-message="min">Please enter more detailed address information.</div>                    
-                </div>
-            </md-input-container>
-            <md-input-container class="col-md-6">
-                <input mdc-datetime-picker="" date="true" time="true" type="text" id="datetime" format="MMMM Do YYYY, h:mm a"
-                        placeholder="Date" min-date="minDate" ng-model="transfer.pickUpDateTime" name="pickUpDateTime" class="md-input" required>
-                <div ng-messages="transferForm.pickUpDateTime.$error" multiple md-auto-hide="false">
-                    <div ng-message="required">Please select pickup date and time.</div>
-                </div>
-            </md-input-container>
-            <div class="clearfix"></div>
-            <md-input-container class="md-block col-md-6">
-                <label>Drop-off location</label>
-                <input ng-model="transfer.dropOffLocation" name="dropOffLocation" required min="10">
-                <div ng-messages="transferForm.dropOffLocation.$error" multiple md-auto-hide="false">
-                    <div ng-message="min">Please enter more detailed address information.</div>                    
-                </div>
-            </md-input-container>
-            <md-input-container class="md-block col-md-3">
-                <label>PAX</label>
-                <md-select ng-model="transfer.pax" name="pax" required min="1">
-                    <md-option ng-repeat="counter in counters" value="{{counter}}">{{counter}}</md-option>
+        <form action="" method="POST" role="form">
+<!--                 <label for="input" class="control-label">Pick Up location https://material.io/icons/ *</label>
+                <input type="text" name="" id="input" class="sm-form-control" placeholder="Airport or Street address ..."> -->
+            <div class="col-md-6">
+                <md-input-container class="md-block">
+                    <label>Pick up location</label>
+                    <input ng-model="user.address">
+                </md-input-container>
+            </div>
+<!--             <div class="col-md-3">
+                <md-input-container class="md-block">
+                    <label>Pick up location</label>
+                    <input ng-model="user.address">
+                </md-input-container>
+            </div> -->
+            <div class="col-md-4" style="margin-top: 10px">
+                <!-- <label for="input" class="control-label">Date *</label> -->
+                <md-input-container>
+                    <label>Start Date/Time</label>
+                    <input mdc-datetime-picker date="true" time="true" type="text"
+                           placeholder="Date"
+                           max-date="dateTimeEnd"
+                           ng-model="dateTimeStart"
+                    />
+                </md-input-container>
+            </div>
+            
+            <!-- <div class="col-md-3">
+                <label for="input" class="control-label">Time *</label>
+                <md-select ng-model="user.state">
+                    <md-option value="1">1</md-option>
+                    <md-option value="2">2</md-option>
+                    <md-option value="3">3</md-option>
+                    <md-option value="4">4</md-option>
                 </md-select>
-                <div ng-messages="transferForm.pax.$error" multiple md-auto-hide="false">
-                    <div ng-message="required">Please select number of PAX.</div>
-                </div>
-            </md-input-container>
-            <md-input-container class="md-block col-md-3">
-                <label>CHILD BELOW 5 </label>
-                <md-select ng-model="transfer.child" name="child">
-                    <md-option ng-repeat="counter in counters" value="{{counter}}">{{counter}}</md-option>
-                </md-select>
-            </md-input-container>        
+            </div>
+            <div class="clear"></div>
+            <div class="col_half">
+                <label for="input" class="control-label">Drop off locations</label>
+                <input type="text" name="" id="input" class="sm-form-control" placeholder="Airport or Street address ..."> 
+            </div>
+            <div class="col_one_sixth">
+                <label for="input" class="control-label">PAX *</label>
+                <input type="text" name="" id="input" class="sm-form-control">
+            </div>
+            <div class="col_one_sixth">
+                <label for="input" class="control-label">Childern below 5</label>
+                <input type="text" name="" id="input" class="sm-form-control">
+            </div> -->
             <div class="clearfix"></div>
-            <button class="button button-reveal button-large tright"><i class="fa fa-bolt"></i><span>Confirm Booking</span></button>
-        </form>
+            <a href="#" class="button button-reveal button-large tright"><i class="fa fa-bolt"></i><span>Confirm Booking</span></a>
+            <!-- </div> -->
+<!--             <div class="form-group">
+                <div class="col-sm-10 col-sm-offset-2">
+                    <button type="submit" class="button">Submit</button>
+                </div>
+            </div>
+ -->        </form>
         </div>
     </div>
     </section>
@@ -101,11 +118,10 @@
 
 <!-- Angular Material Library -->
 <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
-<!-- DateTime picker -->
-<script type="text/javascript" src="assets/app/lib/angular-material-datetimepicker.min.js"></script>
+
 
 <script src="assets/app/MainApp.js"></script>
-<script src="assets/app/controllers/transfer/TransferCtrl.js"></script>
+<script type="text/javascript" src="assets/app/lib/angular-material-datetimepicker.min.js"></script>
 
 </body>
 </html>
