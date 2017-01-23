@@ -74,3 +74,36 @@ Is is possible to check authorisation before returning any data from factory
 
 #Timepicker - one of the best searched
 file:///E:/wamp64/www/just-for-fun/bower_components/angular-material-datetimepicker/index.html
+
+
+#IMPROVEMENTS
+Preserve form data between switching views
+
+Use Native ng-material toast remove toastr
+
+
+#Admin
+Dashboard
+    Current Bookings
+        Transfer Bookings
+        Rental Cars Bookings
+        Fixed Transfer Bookings
+        Activity Bookings
+    Customers Numbers
+    User Numbers 
+Transfer 
+    Regular Bookings - RUD
+    Fixed Routes - CRUD
+    Fixed Bookings - RUD
+Rental Cars
+    Car - CRUD
+    Bookings - RUD
+Activity
+    City - CRUD
+    Activity - CRUD
+    Booking - RUD
+User/Customers/Subscribers/Admin
+    Users - RUD
+    Customers - RUD
+    Subscriptions - RUD
+    Admin Users - CRUD

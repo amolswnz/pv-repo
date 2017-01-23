@@ -1,0 +1,37 @@
+<section id="page-title" class="page-title-dark">
+    <div class="container clearfix">
+        <h1>Book Transfer - Step 2</h1>
+        <span>Login / Register</span>
+        <ol class="breadcrumb">
+            <li><a href="#">Home</a></li>
+            <li><a href="javascript:history.back()">Bookings</a></li>
+            <li class="active">Register/Login</li>
+        </ol>
+    </div>
+</section>
+<section id="content" data-animate="fadeInUp">
+<div class="content-wrap">
+    <div class="container clearfix">
+    <h4>Register / Login</h4>
+    <form name="userForm" ng-submit="userCtrl.authUser()" novalidate>
+        <md-input-container class=" col-md-4">
+            <label>Email address</label>
+            <input ng-model="userCtrl.user.email" name="email" required type="email">
+            <div ng-messages="userForm.email.$error" multiple md-auto-hide="false">
+                <div ng-message="required">Please enter email address.</div>                    
+                <div ng-message="email">Please enter valid email address.</div>                    
+            </div>
+        </md-input-container>
+        <md-input-container class="md-block col-md-4">
+            <label>Password</label>
+            <input ng-model="userCtrl.user.pwd" name="pwd" required type="password">
+            <div ng-messages="userForm.pwd.$error" multiple md-auto-hide="false">
+                <div ng-message="required">Please enter your password.</div>                    
+            </div>
+        </md-input-container>
+        <button class="button button-reveal button-large tright" type="submit"><i class="fa fa-bolt"></i><span>Register / Login</span></button>
+    </form>
+    <blockquote class="blockquote-reverse">If you have account with us, please use the registered email and password. <br>If you DON'T have account with us, we will create an account for you with the email and password provided by you.</blockquote>
+    </div>
+</div>
+</section>
