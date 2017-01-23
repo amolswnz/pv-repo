@@ -4,11 +4,11 @@
             'ngRoute', 'angular-loading-bar'
         ], function($mdThemingProvider) {
               var vrTheme = $mdThemingProvider.theme('vrTheme', 'default');
-              var bluePalette = $mdThemingProvider.extendPalette('blue', {
+              var vrPalette = $mdThemingProvider.extendPalette('blue', {
                 '500': '#b19259'
               });
-              $mdThemingProvider.definePalette('bluePalette', bluePalette);
-              vrTheme.primaryPalette('bluePalette');
+              $mdThemingProvider.definePalette('vrPalette', vrPalette);
+              vrTheme.primaryPalette('vrPalette');
         });
 
     app.config(function($locationProvider, $routeProvider) {
@@ -24,7 +24,7 @@
                 controllerAs: 'userCtrl'
             })
             .when('/booking/confirm', {
-                templateUrl: 'assets/partials/transfer/confirm-fixed.html',
+                templateUrl: 'assets/partials/transfer/fixedTransfersConfirm.html',
                 controller: 'FixedTransferCtrl',
                 controllerAs: 'fixedTransferCtrl'
             })
