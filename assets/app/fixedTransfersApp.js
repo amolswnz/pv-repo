@@ -1,5 +1,5 @@
 (function() {
-    var app = angular.module("rentalCarApp", 
+    var app = angular.module("fixedTransfersApp", 
         [   'ngMaterial', 'ngMaterialDatePicker', 'ngMessages', 
             'ngRoute', 'angular-loading-bar'
         ], function($mdThemingProvider) {
@@ -14,14 +14,9 @@
     app.config(function($locationProvider, $routeProvider) {
         $routeProvider
             .when('/booking', {
-                templateUrl: 'assets/partials/rental/booking.html',
-                controller: 'RentalCtrl',
-                controllerAs: 'rentalCtrl'
-            })
-            .when('/booking/selectCar', {
-                templateUrl: 'assets/partials/rental/car-select.html',
-                controller: 'RentalCtrl',
-                controllerAs: 'rentalCtrl'
+                templateUrl: 'assets/partials/transfer/fixedTransfers.html',
+                controller: 'FixedTransferCtrl',
+                controllerAs: 'fixedTransferCtrl'
             })
             .when('/booking/auth', {
                 templateUrl: 'assets/partials/user/auth/auth.html',
@@ -29,9 +24,9 @@
                 controllerAs: 'userCtrl'
             })
             .when('/booking/confirm', {
-                templateUrl: 'assets/partials/rental/confirm.html',
-                controller: 'RentalCtrl',
-                controllerAs: 'rentalCtrl'
+                templateUrl: 'assets/partials/transfer/confirm-fixed.html',
+                controller: 'FixedTransferCtrl',
+                controllerAs: 'fixedTransferCtrl'
             })
             .otherwise({
                 redirectTo: '/booking'

@@ -1,0 +1,44 @@
+<section id="page-title" class="page-title-dark">
+    <div class="container clearfix">
+        <h1>Book Transfer</h1>
+        <span>Make a booking with us</span>
+        <ol class="breadcrumb">
+            <li><a href="#">Home</a></li>
+            <li class="active">Transfer Bookings</li>
+        </ol>
+    </div>
+</section>
+<section id="content" data-animate="fadeInUp">
+<div class="content-wrap">
+    <div class="container clearfix">
+    <h4>Create Booking</h4>
+    <form name="fixedTransferForm" ng-submit="fixedTransferCtrl.addBooking()" novalidate>
+        <md-input-container class=" col-md-6">
+            <label>Select transfer service</label>
+            <md-select ng-model="fixedTransferCtrl.booking.pax" name="pax" required >
+                <md-option ng-repeat="fixedTransfer in fixedTransferCtrl.transferDetails | orderBy: 'details'" value="{{fixedTransfer.tfId}}">{{fixedTransfer.details}}</md-option>
+            </md-select>
+            <div ng-messages="fixedTransferForm.pickUpLocation.$error" multiple md-auto-hide="false">
+                <div ng-message="required">Please select the transfter details.</div>                    
+            </div>
+        </md-input-container>
+        <md-input-container class="col-md-6">
+            <input mdc-datetime-picker="" date="true" time="true" type="text" id="datetime" format="MMMM Do YYYY, h:mm a"
+                    placeholder="Date" min-date="minDate" ng-model="fixedTransferCtrl.booking.pickUpDateTime" name="pickUpDateTime" class="md-input" required>
+            <div ng-messages="fixedTransferForm.pickUpDateTime.$error" multiple md-auto-hide="false">
+                <div ng-message="required">Please select pickup date and time.</div>
+            </div>
+        </md-input-container>
+        <div class="clearfix"></div>
+        <md-input-container class="md-block col-md-12">
+            <textarea ng-model="fixedTransferCtrl.booking.notes" name="notes" md-maxlength="250" rows="3" placeholder="Additional information" md-select-on-focus></textarea>
+            <div ng-messages="fixedTransferForm.notes.$error" multiple md-auto-hide="false">
+                <div ng-message="required">Please enter less than 250 characters.</div>
+            </div>
+        </md-input-container>        
+        <div class="clearfix"></div>
+        <button class="button button-reveal button-large tright" type="submit"><i class="fa fa-bolt"></i><span>Confirm Booking</span></button>
+    </form>
+    </div>
+</div>
+</section>

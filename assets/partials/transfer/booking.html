@@ -52,7 +52,7 @@
         </md-input-container>
         <div class="clearfix"></div>
         <md-input-container class="md-block col-md-12">
-            <textarea ng-model="transferCtrl.booking.notes" md-maxlength="250" rows="3" placeholder="Additional information" md-select-on-focus></textarea>
+            <textarea ng-model="transferCtrl.booking.notes" name="notes" md-maxlength="250" rows="3" placeholder="Additional information" md-select-on-focus></textarea>
             <div ng-messages="transferForm.notes.$error" multiple md-auto-hide="false">
                 <div ng-message="required">Please enter less than 250 characters.</div>
             </div>

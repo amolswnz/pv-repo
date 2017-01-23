@@ -9,7 +9,12 @@
         var vm = this;
 
         vm.addBooking = function() {
-            console.log("transfer", vm.booking);
+            console.log("rental", vm.booking);
+            $location.path("booking/selectCar");
+        }
+
+        vm.selectCar = function(carNo) {
+            console.log("rental", carNo);
             $location.path("booking/auth");
         }
 

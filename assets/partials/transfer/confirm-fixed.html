@@ -1,0 +1,25 @@
+<section id="page-title" class="page-title-dark">
+    <div class="container clearfix">
+        <h1>Final Step</h1>
+        <span>Confirm Booking</span>
+        <ol class="breadcrumb">
+            <li><a href="#">Home</a></li>
+            <li><a href="#/booking">Booking</a></li>
+            <li><a href="#/booking/auth">Login/Register</a></li>
+            <li class="active">Confirm</li>
+        </ol>
+    </div>
+</section>
+<section id="content" data-animate="fadeInUp">
+<div class="content-wrap">
+    <div class="container clearfix">
+        <h4>Confirm Booking</h4>
+        <div class="col-md-6 col-md-offset-2">
+            <h5><em>PAX :</em> {{ }} <div style="display: inline">ng-show <em>Child below 5</em> {{ }}</div></h5>
+            <h5><em>Transfer Service Booked :</em> {{ }} at {{ }}</h5>
+            <h5> ng-show <em>Additional Note :</em> {{ }}</h5>
+            <button class="button button-reveal button-large tright" ng-click="fixedTransferCtrl.confirmBooking()"><i class="fa fa-bolt"></i><span>Confirm Booking</span></button>
+        </div>
+    </div>
+</div>
+</section>

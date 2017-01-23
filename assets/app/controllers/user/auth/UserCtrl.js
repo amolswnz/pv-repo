@@ -6,7 +6,11 @@
         try {
             var app = angular.module("rentalCarApp");
         } catch(err) {
-            var app = angular.module("x");
+            try { 
+                var app = angular.module("fixedTransfersApp");
+            } catch(err) {
+                var app = angular.module("activityApp");
+            }
         }
     }
 
