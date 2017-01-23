@@ -1,10 +1,10 @@
 (function() {
     angular.module("rentalCarApp")
-        .controller("TransferCtrl", ['$scope', '$location', TransferCtrl]);
+        .controller("RentalCtrl", ['$scope', '$location', RentalCtrl]);
 
-    function TransferCtrl($scope, $location) {
-        $scope.counters = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
-        $scope.minDate = new Date();
+    function RentalCtrl($scope, $location) {
+      $scope.minDate = new Date();
+      $scope.maxDate = new Date();
 
         var vm = this;
 

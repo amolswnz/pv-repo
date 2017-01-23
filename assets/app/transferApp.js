@@ -2,7 +2,14 @@
     var app = angular.module("transferApp", 
         [   'ngMaterial', 'ngMaterialDatePicker', 'ngMessages', 
             'ngRoute', 'angular-loading-bar'
-        ]);
+        ], function($mdThemingProvider) {
+              var vrTheme = $mdThemingProvider.theme('vrTheme', 'default');
+              var bluePalette = $mdThemingProvider.extendPalette('blue', {
+                '500': '#b19259'
+              });
+              $mdThemingProvider.definePalette('bluePalette', bluePalette);
+              vrTheme.primaryPalette('bluePalette');
+        });
 
     app.config(function($locationProvider, $routeProvider) {
         $routeProvider

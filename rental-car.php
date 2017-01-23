@@ -25,7 +25,7 @@
 <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
 <![endif]-->
 </head>
-<body class="stretched" ng-app="rentalCarApp">
+<body class="stretched" ng-app="rentalCarApp" md-theme="vrTheme">
 <div id="wrapper" class="clearfix">
     <?php require_once 'assets/partials/includes/header.html'; ?>
                     
@@ -53,8 +53,8 @@
 <script src="assets/app/lib/toastr.min.js"></script>
 
 <!-- App files -->
-<script src="assets/app/transferApp.js"></script>
-<script src="assets/app/controllers/transfer/RentalCarCtrl.js"></script>
+<script src="assets/app/rentalCarApp.js"></script>
+<script src="assets/app/controllers/rental/RentalCarCtrl.js"></script>
 <script src="assets/app/controllers/user/auth/UserCtrl.js"></script>
 
 </body>

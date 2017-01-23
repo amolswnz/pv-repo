@@ -25,7 +25,7 @@
 <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
 <![endif]-->
 </head>
-<body class="stretched" ng-app="transferApp">
+<body class="stretched" ng-app="transferApp" md-theme="vrTheme">
 <div id="wrapper" class="clearfix">
     <?php require_once 'assets/partials/includes/header.html'; ?>
                     
