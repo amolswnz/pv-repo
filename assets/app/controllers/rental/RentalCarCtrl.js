@@ -8,7 +8,7 @@
 
         var vm = this;
 
-        vm.addTransferBooking = function() {
+        vm.addBooking = function() {
             console.log("transfer", vm.booking);
             $location.path("booking/auth");
         }
