@@ -25,7 +25,7 @@
 <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
 <![endif]-->
 </head>
-<body class="stretched" ng-app="transferApp">
+<body class="stretched" ng-app="rentalCarApp">
 <div id="wrapper" class="clearfix">
     <?php require_once 'assets/partials/includes/header.html'; ?>
                     
@@ -54,7 +54,7 @@
 
 <!-- App files -->
 <script src="assets/app/transferApp.js"></script>
-<script src="assets/app/controllers/transfer/TransferCtrl.js"></script>
+<script src="assets/app/controllers/transfer/RentalCarCtrl.js"></script>
 <script src="assets/app/controllers/user/auth/UserCtrl.js"></script>
 
 </body>

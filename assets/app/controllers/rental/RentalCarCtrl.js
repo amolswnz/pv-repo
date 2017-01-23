@@ -1,5 +1,5 @@
 (function() {
-    angular.module("transferApp")
+    angular.module("rentalCarApp")
         .controller("TransferCtrl", ['$scope', '$location', TransferCtrl]);
 
     function TransferCtrl($scope, $location) {
