@@ -2,6 +2,7 @@
     angular.module("activityApp")
         .factory('activityService', function($http) {
             var baseUrl = "assets/api/activity/";
+            var commonsUrl = "assets/api/commons/";
 
             var getActivity = function() {
                 return $http({
@@ -13,9 +14,17 @@
             var getCity = function() {
                 return $http({
                             method: 'GET',
-                            url: baseUrl + 'getCity.php'
+                            url: commonsUrl + 'getCity.php'
                         }).then(successFn, errorFn);
             };
+
+            var getCityActivity = function(cityIds) {
+                return $http({
+                            method: 'POST',
+                            url: baseUrl + 'getCityActivity.php',
+                            data: cityIds                     
+                        }).then(successFn, errorFn);
+            };            
 
             var successFn = function(response) {
                 return response.data;
@@ -27,7 +36,8 @@
 
             return {
                 getActivity: getActivity,
-                getCity: getCity
+                getCity: getCity,
+                getCityActivity: getCityActivity
             };
         });
 }());

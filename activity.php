@@ -55,7 +55,7 @@
 <!-- App files -->
 <script src="assets/app/activityApp.js"></script>
 <script src="assets/app/controllers/activity/ActivityCtrl.js"></script>
-<script src="assets/app/controllers/user/auth/UserCtrl.js"></script>
+<!-- <script src="assets/app/controllers/user/auth/UserCtrl.js"></script> -->
 <script src="assets/app/services/activity/activityService.js"></script>
 
 </body>

@@ -8,14 +8,25 @@
 
         var vm = this;
 
-        activityService.getActivity().then(function(response) {
-            vm.activityDetails = response;
+        activityService.getCity().then(function(response) {
+            vm.cities = response;
             console.log(response);
         });
 
+        vm.selectActivity = function(selectedCity) {
+            console.log(selectedCity);
+            console.log(Object.keys(selectedCity));
+            activityService.getCityActivity(Object.keys(selectedCity)).then(function(response) {
+                console.log("ca",response);
+                vm.activities = response;
+                $location.path("booking/selectActivity");
+            });
+
+        }
+
         vm.addBooking = function() {
             console.log("transfer", vm.booking);
-            $location.path("booking/auth");
+                $location.path("booking/auth");
         }
 
         vm.confirmBooking = function() {

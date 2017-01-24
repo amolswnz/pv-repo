@@ -80,6 +80,12 @@ file:///E:/wamp64/www/just-for-fun/bower_components/angular-material-datetimepic
 Preserve form data between switching views
 
 Use Native ng-material toast remove toastr
+    #selected city show image
+        {{ activityCtrl.selectedCity }}
+            <div ng-repeat="x in activityCtrl.selectedCity">
+                {{ x }}
+            </div>
+        Change checkbox color
 
 
 #Admin
@@ -127,4 +133,8 @@ SELECT * from vr_booking_rental_car WHERE id NOT IN (
 This will give all the booking details which are not during the given dates
 
 # Available cars list
+
+
+
+
 

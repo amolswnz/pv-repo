@@ -2,7 +2,6 @@
     var app = angular.module("activityApp", 
         [   'ngMaterial', 'ngMaterialDatePicker', 'ngMessages', 
             'ngRoute', 'angular-loading-bar',
-            'angular.filter'
         ], function($mdThemingProvider) {
               var vrTheme = $mdThemingProvider.theme('vrTheme', 'default');
               var vrPalette = $mdThemingProvider.extendPalette('blue', {
@@ -14,8 +13,18 @@
 
     app.config(function($locationProvider, $routeProvider) {
         $routeProvider
-            .when('/booking', {
-                templateUrl: 'assets/partials/activity/booking.html',
+            .when('/booking/selectCity', {
+                templateUrl: 'assets/partials/activity/selectCity.html',
+                controller: 'ActivityCtrl',
+                controllerAs: 'activityCtrl'
+            })
+            .when('/booking/selectActivity', {
+                templateUrl: 'assets/partials/activity/selectActivity.html',
+                controller: 'ActivityCtrl',
+                controllerAs: 'activityCtrl'
+            })
+            .when('/booking/selectDate', {
+                templateUrl: 'assets/partials/activity/selectDate.html',
                 controller: 'ActivityCtrl',
                 controllerAs: 'activityCtrl'
             })
@@ -30,7 +39,7 @@
                 controllerAs: 'activityCtrl'
             })
             .otherwise({
-                redirectTo: '/booking'
+                redirectTo: '/booking/selectCity'
             });
     });
 
