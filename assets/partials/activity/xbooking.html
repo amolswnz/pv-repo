@@ -1,0 +1,28 @@
+<section id="page-title" class="page-title-dark">
+    <div class="container clearfix">
+        <h1>Book Activity</h1>
+        <span>Make a booking with us</span>
+        <ol class="breadcrumb">
+            <li><a href="#">Home</a></li>
+            <li class="active">Select Activity</li>
+        </ol>
+    </div>
+</section>
+<section id="content" data-animate="fadeInUp">
+<div class="content-wrap">
+    <div class="container clearfix">
+        <h4>Create Booking</h4> 
+        <ul ng-repeat="(cityGroup, cityValues) in activityCtrl.activityDetails | groupBy: 'cityName'">
+            <h5>Group name: {{ cityGroup }}</h5>
+            <li ng-repeat="activity in cityValues">
+                <h6>Group name: {{ headingGroup }}</h6>
+                <ul ng-repeat="(headingGroup, headingValues) in cityValues | groupBy: 'activityHeading'">
+                    <li ng-repeat="activity in headingValues">
+                        player: {{ activity.activityName }}
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</div>
+</section>

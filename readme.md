@@ -69,7 +69,7 @@ HTML Way
 
 
 # * Check for authentication in factory - see angular notes readme
-Is is possible to check authorisation before returning any data from factory 
+Is it possible to check authorisation before returning any data from factory 
 
 
 #Timepicker - one of the best searched
@@ -107,3 +107,24 @@ User/Customers/Subscribers/Admin
     Customers - RUD
     Subscriptions - RUD
     Admin Users - CRUD
+
+
+
+
+
+# All Current Booking data for these dates
+SELECT * FROM vr_booking_rental_car WHERE dateFrom BETWEEN "2017-01-21" AND "2017-02-22" UNION 
+SELECT * FROM vr_booking_rental_car WHERE dateTo BETWEEN "2017-01-21" AND "2017-02-22"
+
+
+# All Bookings data except these dates 
+SELECT * from vr_booking_rental_car WHERE id NOT IN (
+    SELECT id FROM vr_booking_rental_car WHERE dateFrom BETWEEN "2017-01-21" AND "2017-02-22" UNION 
+    SELECT id FROM vr_booking_rental_car WHERE dateTo BETWEEN "2017-01-21" AND "2017-02-22"
+)
+
+# All booking data where status is not Booked for the dates given
+This will give all the booking details which are not during the given dates
+
+# Available cars list
+
