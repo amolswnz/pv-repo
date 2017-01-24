@@ -14,12 +14,14 @@
         });
 
         vm.selectActivity = function(selectedCity) {
-            console.log(selectedCity);
-            console.log(Object.keys(selectedCity));
+            vm.activities = { };
+            console.log("vm.activities",vm.activities)
+            // console.log(selectedCity);
+            // console.log(Object.keys(selectedCity));
             activityService.getCityActivity(Object.keys(selectedCity)).then(function(response) {
                 console.log("ca",response);
                 vm.activities = response;
-                $location.path("booking/selectActivity");
+                // $location.path("booking/selectActivity");
             });
 
         }

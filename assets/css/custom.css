@@ -9,3 +9,6 @@ body {
     -moz-osx-font-smoothing: grayscale; 
     text-shadow: 1px 1px 1px rgba(0,0,0,0.04); 
 }
+.md-dialog-container, .md-dialog {
+    z-index: 9999 !important;
+}
