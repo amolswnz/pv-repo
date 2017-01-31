@@ -7,18 +7,20 @@
     $postdata = file_get_contents("php://input");
     $request = json_decode($postdata, true);        // Convert from object to array
 
-    $inQuery = implode(",", array_fill(0, count($request), "?"));
+    $cityIds = array_keys($request[0]);
+
+    $inQuery = implode(",", array_fill(0, count($cityIds), "?"));
 
     $sql = "SELECT * FROM vr_activity WHERE cityId IN ($inQuery) AND status = ?";
     $stmt = $pdo->prepare($sql);
 
-    foreach ($request as $key => $value){
+    foreach ($cityIds as $key => $value){
         $stmt->bindValue(($key+1), $value);
     }
 
-    array_push($request, "Active");
+    array_push($cityIds, "Active");
 
-    $stmt->execute($request);
+    $stmt->execute($cityIds);
     $result = $stmt->fetchAll();
 
     echo json_encode($result);

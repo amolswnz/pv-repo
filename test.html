@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test</title>
+</head>
+<body>
+ requestData.forEach(function (data) {
+                console.log(data, "data", selectedCityIds.indexOf(data));
+                if(! selectedCityIds.indexOf(data)) {
+                    selectedCityIds.push(data);
+                    console.log("pushing", data, selectedCityIds, "-", selectedCityIds.indexOf(data));
+                } else {
+                    console.log(data, "Found");
+                }
+                    console.log("pushing", data, selectedCityIds, "-", selectedCityIds.indexOf(data));
+            });
+                // selectedCityIds.push(requestData);
+<script type="text/javascript">
+    
+            var selectedCityIds = [3,2,1];
+
+            var requestData = [1,2,4,5];
+
+            console.log(selectedCityIds);
+            console.log(requestData);
+
+               var newData = selectedCityIds.concat(requestData);
+               console.log(newData);
+    for(var i=0; i<newData.length; ++i) {
+        for(var j=i+1; j<newData.length; ++j) {
+            if(newData[i] === newData[j])
+                newData.splice(j--, 1);
+        }
+    }
+    console.log("new",newData);
+    selectedCityIds = newData;
+
+
+console.log(selectedCityIds);
+</script>
+</body>
+</html>

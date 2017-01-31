@@ -52,4 +52,10 @@ class Database {
         $setValues = implode(",", $keys);
         return $setValues;
     }
+
+    public static function hashPassword($pwd) {
+        $HASH_SALT = "Rand0m!S@lt";
+        $hashedPwd = hash('sha256', $pwd . $HASH_SALT);
+        return $hashedPwd;
+    }
 }

@@ -3,13 +3,7 @@
         .factory('activityService', function($http) {
             var baseUrl = "assets/api/activity/";
             var commonsUrl = "assets/api/commons/";
-
-            var getActivity = function() {
-                return $http({
-                            method: 'GET',
-                            url: baseUrl + 'getActivity.php'
-                        }).then(successFn, errorFn);
-            };
+            var selectedCityIds = new Array();
 
             var getCity = function() {
                 return $http({
@@ -18,13 +12,27 @@
                         }).then(successFn, errorFn);
             };
 
-            var getCityActivity = function(cityIds) {
+            var addCityIds = function(requestData) {
+                // Removing duplicate data
+                var newData = selectedCityIds.concat(requestData);
+                for(var i = 0; i < newData.length; ++i) {
+                    for (var j = i + 1; j < newData.length; ++j) {
+                        if (newData[i] === newData[j])
+                            newData.splice(j--, 1);
+                    }
+                }
+                selectedCityIds = newData;
+                console.log("cityids", selectedCityIds);
+                return selectedCityIds;
+            }
+
+            var getActivities = function() {
                 return $http({
                             method: 'POST',
                             url: baseUrl + 'getCityActivity.php',
-                            data: cityIds                     
+                            data: selectedCityIds
                         }).then(successFn, errorFn);
-            };            
+            }
 
             var successFn = function(response) {
                 return response.data;
@@ -35,9 +43,9 @@
             }
 
             return {
-                getActivity: getActivity,
                 getCity: getCity,
-                getCityActivity: getCityActivity
+                addCityIds: addCityIds,
+                getActivities: getActivities
             };
         });
 }());

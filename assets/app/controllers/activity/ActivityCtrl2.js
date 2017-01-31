@@ -13,19 +13,21 @@
             console.log(response);
         });
 
-        vm.addCityIds = function(cityIds) {
-            activityService.addCityIds(cityIds);
-            // activityService.getActivities().then(function(response) {
-            //     vm.activities = response;
-            //     console.log("switching to activity", vm.activities);
-            //     $location.path("booking/selectActivity");                
-            // });
-            console.log(vm.activities);
+        vm.selectActivity = function(selectedCity) {
+            vm.activities = { };
+            console.log("vm.activities",vm.activities)
+            // console.log(selectedCity);
+            // console.log(Object.keys(selectedCity));
+            activityService.getCityActivity(Object.keys(selectedCity)).then(function(response) {
+                console.log("ca",response);
+                vm.activities = response;
+                // $location.path("booking/selectActivity");
+            });
         }
 
         vm.addBooking = function() {
             console.log("transfer", vm.booking);
-            $location.path("booking/auth");
+                $location.path("booking/auth");
         }
 
         vm.confirmBooking = function() {
@@ -35,4 +37,5 @@
 
         console.log("Boking", vm);
     }
+
 }());

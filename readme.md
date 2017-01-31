@@ -138,3 +138,9 @@ This will give all the booking details which are not during the given dates
 
 
 
+
+
+
+
+#Store redirect url in $rootScope when authenticating user
+check this url in userctrl to redirect user to prev url
