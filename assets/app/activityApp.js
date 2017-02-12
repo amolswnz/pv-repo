@@ -43,4 +43,10 @@
             });
     });
 
+    app.config(function($mdAriaProvider) {
+       // Globally disables all ARIA warnings.
+       $mdAriaProvider.disableWarnings();
+    });
+
+
 }());

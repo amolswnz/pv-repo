@@ -19,9 +19,61 @@
         </div>
         <div class="clearfix"></div>
         <md-input-container class="md-block col-md-12">
-            <button class="button button-reveal button-large tright" ng-click="activityCtrl.addCityIds(activityCtrl.selectedCity)"><i class="fa fa-bolt"></i><span>Continue</span></button>
+            <button class="button button-reveal button-large tright" ng-click="activityCtrl.addCityIds(activityCtrl.selectedCity)"><i class="fa fa-angle-double-down"></i><span>Continue</span></button>
         </md-input-container>    
     </div>
-    {{ activityCtrl.activities }}
+    <div class="container clearfix" ng-show="activityCtrl.activities.length">
+        <h4>Select Activities</h4>  
+        <table class="table table-hover table-condensed borderless">
+            <thead>
+                <th>#</th>
+                <th>Name</th>
+                <th width="10%">Unit Cost</th>
+                <th width="5%">Qty</th>
+                <th width="15%">Date</th>
+                <th width="10%">Total Cost</th>
+            </thead>
+            <tr ng-repeat="activity in activityCtrl.activities">
+            <td class="vert-align">
+                {{ $index+1 }}
+            </td>
+            <td class="vert-align">
+                {{ activity.activityName }}
+            </td>
+            <td class="vert-align">
+                <md-input-container class="md-icon-float md-block">
+                    <md-icon md-font-icon="icon-group" ng-class="icon" class="fa fa-dollar"></md-icon>
+                    <input ng-model="activity.price" name="unitCost" ng-value="{{ activity.price}}" format="currency" readonly="readonly">
+                </md-input-container>
+            </td>
+            <td>
+                <md-select ng-model="activityCtrl.booking.quantities[$index]" name="qty[]" ng-change="activityCtrl.quantityChanged(activity.aId, activityCtrl.booking.quantities[$index])">
+                    <md-option ng-repeat="counter in counters" value="{{counter}}" placeholder="qty">{{counter}}</md-option>
+                </md-select>
+            </td>
+            <td>
+                <md-input-container ng-show="activityCtrl.booking.quantities[$index]">
+                    <input mdc-datetime-picker="" date="true" time="false" type="text" format="MMMM Do YYYY" placeholder="Date" min-date="minDate" ng-model="activityCtrl.booking.bookingDate[$index]" name="bookingDates[]" class="md-input">
+               </md-input-container>
+            </td>
+            <td>               
+                <md-input-container class="md-icon-float md-block" ng-show="activityCtrl.booking.totalCost[$index] != 0">
+                    <md-icon md-font-icon="icon-group" ng-class="icon" class="fa fa-dollar"></md-icon>
+                    <input ng-model="activityCtrl.booking.totalCost[$index]" name="totalCost[]" currency readonly="readonly">
+                </md-input-container>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="6" ng-show="activityCtrl.booking.grandTotal != 0">
+                <h4 class='text-right'>Grand Total {{ activityCtrl.booking.grandTotal | currency }} </h4>
+            </td>
+        </tr>
+        </table>
+ 
+        <md-input-container class="md-block col-md-12">
+            <button class="button button-reveal button-large tright" 
+                ng-click="activityCtrl.booking()"><i class="fa fa-bolt"></i><span>Finish</span></button>
+        </md-input-container>  
+    </div>
 </div>
 </section>

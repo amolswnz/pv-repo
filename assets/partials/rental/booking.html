@@ -15,9 +15,12 @@
     <form name="bookingForm" ng-submit="rentalCtrl.addBooking()" novalidate>
         <md-input-container class=" col-md-6">
             <label>Pickup location</label>
-            <input ng-model="rentalCtrl.booking.pickUpLocation" name="pickUpLocation" required min="10">
+            <!-- <input ng-model="rentalCtrl.booking.pickUpLocation" name="pickUpLocation" required min="10"> -->
+            <md-select ng-model="rentalCtrl.booking.pickUpLocation" name="pickUpLocation" required >
+                <md-option ng-repeat="locationDetail in rentalCtrl.locationDetails | orderBy: 'locationDetail'" value="{{locationDetail.lId}}">{{locationDetail.locationDetail}}</md-option>
+            </md-select>
             <div ng-messages="bookingForm.pickUpLocation.$error" multiple md-auto-hide="false">
-                <div ng-message="min">Please enter more detailed address information.</div>                    
+                <div ng-message="required">Please select the pickup location.</div>                    
             </div>
         </md-input-container>
         <md-input-container class="md-block col-md-3">

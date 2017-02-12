@@ -1,0 +1,55 @@
+<section id="page-title" class="page-title-dark">
+    <div class="container clearfix">
+        <h1>Book Activity</h1>
+        <span>Make a booking with us</span>
+        <ol class="breadcrumb">
+            <li><a href="#">Home</a></li>
+            <li class="active">Select Activity</li>
+        </ol>
+    </div>
+</section>
+<section id="content" data-animate="fadeInUp">
+<div class="content-wrap">
+    <div class="container clearfix">
+        <h4>Select Cities</h4> 
+        <div ng-repeat="city in activityCtrl.cities">
+            <md-checkbox ng-model="activityCtrl.selectedCity[city.cId]" class="md-primary col-md-4" value="{{ city.cId }}" name="c[]" aria-label="{{ city.cityName }}">
+                {{ city.cityName }}
+            </md-checkbox>
+        </div>
+        <div class="clearfix"></div>
+        <md-input-container class="md-block col-md-12">
+            <button class="button button-reveal button-large tright" ng-click="activityCtrl.addCityIds(activityCtrl.selectedCity)"><i class="fa fa-bolt"></i><span>Continue</span></button>
+        </md-input-container>    
+    </div>
+    <div class="container clearfix">
+        <h4>Select Activities</h4>  
+
+        <div ng-repeat-start="activity in activityCtrl.activities" class="clearfix" ng-if="$index % 3 == 0"></div>
+        <div ng-repeat-end class="col-sm-4" style="z-index: 1">
+            <!-- <md-checkbox ng-model="activityCtrl.selectedActivities[activity.aId]" class="md-primary col-md-8" value="{{ activity.aId }}" name="activity[]"> -->
+            <div class="md-primary">
+                {{ activity.activityName }} <em>{{ activity.price | currency }}</em>
+            </div>
+            <!-- </md-checkbox> -->
+            <div class="clearfix"></div>
+            <md-select ng-model="activityCtrl.quantities[activity.aId]" name="qty[]" class="col-md-4" ng-change="activityCtrl.quantityChanged(activityCtrl.quantities)">
+                <md-option ng-repeat="counter in counters" value="{{counter}}" placeholder="qty">{{counter}}</md-option>
+            </md-select>
+            <md-input-container>
+                <input mdc-datetime-picker="" date="true" time="false" type="text" id="datetime" class="col-md-8" format="MMMM Do YYYY"
+                        placeholder="Date" min-date="minDate" ng-model="activityCtrl.bookingDate[activity.aId]" name="bookingDates[]" class="md-input">
+           </md-input-container>
+           <md-input-container class="md-block col-md-10">
+                <label>Total Cost</label>
+                <input ng-model="activityCtrl.totalCost" name="totalcost" readonly="readonly">
+            </md-input-container>
+        </div>
+        <div class="clearfix"></div>
+        <md-input-container class="md-block col-md-12">
+            <button class="button button-reveal button-large tright" 
+                ng-click="activityCtrl.addActivityIds(activityCtrl.selectedActivities, activityCtrl.quantities, activityCtrl.bookingDate)"><i class="fa fa-bolt"></i><span>Finish</span></button>
+        </md-input-container>  
+    </div>
+</div>
+</section>

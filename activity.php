@@ -14,6 +14,7 @@
 <link rel="stylesheet" href="assets/css/animate.css" type="text/css" />
 <link rel="stylesheet" href="assets/css/responsive.css" type="text/css" />
 <link rel="stylesheet" href="assets/css/custom.css" type="text/css" />
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 
 <!-- Angular CSS  -->
 <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
@@ -43,9 +44,9 @@
 <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js"></script>
 <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-aria.min.js"></script>
 <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-messages.min.js"></script>
-<script src="http://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment-with-locales.min.js"></script>
-<script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
 <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.9/angular-route.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment-with-locales.min.js"></script>
 
 <!-- Helper libraries -->
 <script src="assets/app/lib/angular-material-datetimepicker.min.js"></script>
@@ -57,6 +58,6 @@
 <script src="assets/app/controllers/activity/ActivityCtrl.js"></script>
 <!-- <script src="assets/app/controllers/user/auth/UserCtrl.js"></script> -->
 <script src="assets/app/services/activity/activityService.js"></script>
-
+<script src="assets/app/directives/activity/format.js"></script>
 </body>
 </html>

@@ -3,7 +3,7 @@
         .factory('activityService', function($http) {
             var baseUrl = "assets/api/activity/";
             var commonsUrl = "assets/api/commons/";
-            var selectedCityIds = {};
+            var selectedCityIds = new Array();
 
             var getCity = function() {
                 return $http({
@@ -14,14 +14,14 @@
 
             var addCityIds = function(requestData) {
                 // Removing duplicate data
-                // var newData = selectedCityIds.concat(requestData);
-                // for(var i = 0; i < newData.length; ++i) {
-                //     for (var j = i + 1; j < newData.length; ++j) {
-                //         if (newData[i] === newData[j])
-                //             newData.splice(j--, 1);
-                //     }
-                // }
-                selectedCityIds = requestData;
+                var newData = selectedCityIds.concat(requestData);
+                for(var i = 0; i < newData.length; ++i) {
+                    for (var j = i + 1; j < newData.length; ++j) {
+                        if (newData[i] === newData[j])
+                            newData.splice(j--, 1);
+                    }
+                }
+                selectedCityIds = newData;
                 console.log("cityids", selectedCityIds);
                 return selectedCityIds;
             }

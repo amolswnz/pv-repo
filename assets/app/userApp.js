@@ -13,7 +13,7 @@
 
     app.config(function($locationProvider, $routeProvider) {
         $routeProvider
-            .when('/user', {
+            .when('/login', {
                 templateUrl: 'assets/partials/user/auth/auth.html',
                 controller: 'UserCtrl',
                 controllerAs: 'userCtrl'
@@ -29,7 +29,7 @@
                 controllerAs: 'logoutCtrl'
             })
             .otherwise({
-                redirectTo: '/user'
+                redirectTo: '/login'
             });
     });
 

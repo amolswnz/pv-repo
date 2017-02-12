@@ -25,10 +25,8 @@
             else {
                 $session = Session::getInstance();
                 $session->id = $userDetails['uId'];
-                $session->name = 
-                        $userDetails['firstName'] ? $userDetails['firstName'] : $userDetails['email'];
-                    // $userDetails['firstName'];
-                $result = "You have been logged in successfully !";
+                $session->name = $userDetails['firstName'] ? $userDetails['firstName'] : $userDetails['email'];
+                $result = "Welcome, " . $session->name . "!";
             }
         }
         else if($userDetails['status'] == "Inactive") {
@@ -51,5 +49,5 @@
         $session->id = $pdo->lastInsertId();
         $session->name = $request['email'];
         $result = "Success! A New account has been created for you.";
-        echo json_encode(array('new' => $result));
+        echo json_encode(array('newUser' => $result));
     }

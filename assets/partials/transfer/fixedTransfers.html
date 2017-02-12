@@ -19,7 +19,7 @@
                 <md-option ng-repeat="fixedTransfer in fixedTransferCtrl.transferDetails | orderBy: 'details'" value="{{fixedTransfer.tfId}}">{{fixedTransfer.details}}</md-option>
             </md-select>
             <div ng-messages="fixedTransferForm.pickUpLocation.$error" multiple md-auto-hide="false">
-                <div ng-message="required">Please select the transfter details.</div>                    
+                <div ng-message="required">Please select the transfer details.</div>                    
             </div>
         </md-input-container>
         <md-input-container class="col-md-6">

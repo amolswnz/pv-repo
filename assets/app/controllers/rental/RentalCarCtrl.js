@@ -1,12 +1,17 @@
 (function() {
     angular.module("rentalCarApp")
-        .controller("RentalCtrl", ['$scope', '$location', RentalCtrl]);
+        .controller("RentalCtrl", ['$scope', '$location', 'rentalService', RentalCtrl]);
 
-    function RentalCtrl($scope, $location) {
+    function RentalCtrl($scope, $location, rentalService) {
       $scope.minDate = new Date();
       $scope.maxDate = new Date();
 
         var vm = this;
+
+        rentalService.getCarLocations().then(function(response) {
+            vm.locationDetails = response;
+            console.log(response);
+        });
 
         vm.addBooking = function() {
             console.log("rental", vm.booking);

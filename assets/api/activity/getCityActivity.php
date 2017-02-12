@@ -7,7 +7,13 @@
     $postdata = file_get_contents("php://input");
     $request = json_decode($postdata, true);        // Convert from object to array
 
-    $cityIds = array_keys($request[0]);
+    $cityIds = array();
+
+    // $request = [ [1: true], [2:false], [3:...], [4:...] ]
+    foreach ($request as $key => $value) {
+        if($value) 
+            array_push($cityIds, $key);
+    }
 
     $inQuery = implode(",", array_fill(0, count($cityIds), "?"));
 

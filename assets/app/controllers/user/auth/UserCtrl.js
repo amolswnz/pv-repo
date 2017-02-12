@@ -44,9 +44,9 @@
                             "newestOnTop": false
                         };
                 if(response.active) {
-                    toastr.success(response.active, "Success", { 
+                    toastr.success(response.active, "Success"/*, { 
                         onHidden: function() { $window.history.back(); }
-                    });
+                    }*/);
                 }
                 else if(response.unauth) {                      // Incorrect password
                     toastr.warning(response.unauth, "Error");
@@ -57,9 +57,9 @@
                 else if(response.deleted) {
                     toastr.error(response.deleted, "Deleted Account");
                 } else {                                       // New account
-                    toastr.success(reponse.new, "New Account", { 
+                    toastr.info(response.newUser, "New Account"/*, { 
                         onHidden: function() { $window.history.back(); }
-                    });
+                    }*/);
                 }            
             })
             // $location.path("booking/confirm"); // path does not include hash

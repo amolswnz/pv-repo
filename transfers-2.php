@@ -15,6 +15,7 @@
 <link rel="stylesheet" href="assets/css/responsive.css" type="text/css" />
 <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
 <link rel="stylesheet" href="assets/css/custom.css" type="text/css" />
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 
 <link rel="stylesheet" href="assets/css/components/datepicker.css" type="text/css" />
 <link rel="stylesheet" href="assets/css/components/timepicker.css" type="text/css" />

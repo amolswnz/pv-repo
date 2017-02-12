@@ -14,6 +14,7 @@
 <link rel="stylesheet" href="assets/css/animate.css" type="text/css" />
 <link rel="stylesheet" href="assets/css/responsive.css" type="text/css" />
 <link rel="stylesheet" href="assets/css/custom.css" type="text/css" />
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 
 <!-- Angular CSS  -->
 <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">

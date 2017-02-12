@@ -13,8 +13,9 @@
 <link rel="stylesheet" href="assets/css/font-awesome.min.css" type="text/css" />
 <link rel="stylesheet" href="assets/css/animate.css" type="text/css" />
 <link rel="stylesheet" href="assets/css/responsive.css" type="text/css" />
-    <link rel="stylesheet" href="assets/css/magnific-popup.css" type="text/css" />
+<link rel="stylesheet" href="assets/css/magnific-popup.css" type="text/css" />
 <link rel="stylesheet" href="assets/css/custom.css" type="text/css" />
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 
 <link rel="stylesheet" href="assets/css/components/datepicker.css" type="text/css" />
 <link rel="stylesheet" href="assets/css/components/timepicker.css" type="text/css" />

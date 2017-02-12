@@ -12,3 +12,9 @@ body {
 .md-dialog-container, .md-dialog {
     z-index: 9999 !important;
 }
+.borderless td, .borderless th { 
+    border-top: none !important; 
+} 
+.table tbody>tr>td.vert-align { 
+    vertical-align: middle; 
+}
